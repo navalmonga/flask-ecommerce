@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block nav_home %}active underline{% endblock %}
+{% block content %}
+    <!--
+    <div>
+      <h1 class="sb__logo">Home</h1>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active">Home</li>
+      </ol>
+    </nav>
+    -->
+    <div class="flex__wrapper-col">
+        <span class="brand">
+          <img src={{ url_for('static', filename='3d.svg') }} style="width: 1.5em;"/>
+          <a class="navbar-brand sb__logo" href={{ url_for('main.index' )}}>soldby.io</a>
+        </span>
+        <h5 class="sb__subtitle">Buy 🛒 and sell 💸, shipping 📦 included.</h5>
+        <form action={{ url_for('users.login') }}>
+            <button type="submit" class="btn btn-dark sb__button"><code>login&nbsp;<i class="fas fa-long-arrow-alt-right"></i></code></button>
+        </form>
+        <form action={{ url_for('users.register') }}>
+            <button type="submit" class="btn btn-dark sb__button"><code>create an account&nbsp;<i class="fas fa-long-arrow-alt-right"></i></code></button>
+        </form>
+    </div>
+    <video autoplay muted loop class="video-bg">
+      <source src={{ url_for('static', filename='times-square-timelapse.mp4') }} type="video/mp4">
+    </video>
+{% endblock %}

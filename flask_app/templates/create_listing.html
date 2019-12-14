@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+      <h1 class="sb__logo">Sell an item</h1>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href={{ url_for('main.index') }}>Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Create Listing</li>
+      </ol>
+    </nav>
+    <div>
+       <form action="" method="post">
+            {{ form.csrf_token }}
+            <div>
+                {{ form.item_name.label(class="form-control-label") }}
+                {{ form.item_name(class="form-control form-control-lg space-bottom-sm") }}
+                {% if form.item_name.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.item_name.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.item_desc.label(class="form-control-label") }}
+                {{ form.item_desc(class="form-control form-control-lg space-bottom-sm") }}
+                {% if form.item_desc.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.item_desc.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.price.label(class="form-control-label") }}
+                {{ form.price(class="form-control form-control-lg space-bottom-sm") }}
+                {% if form.price.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.price.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.item_picture_url.label(class="form-control-label") }}
+                {{ form.item_picture_url(class="form-control form-control-lg space-bottom-sm") }}
+                {% if form.item_picture_url.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.item_picture_url.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.submit(class="form-control form-control-lg") }}
+            </div>
+        </form>
+    </div>
+    
+{% endblock %}

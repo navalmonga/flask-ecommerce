@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block nav_account %}active underline{% endblock %}
+{% block content %}
+    <div>
+      <h1 class="sb__logo">Account</h1>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href={{ url_for('main.index') }}>Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Account</li>
+      </ol>
+    </nav>
+    <div class="flexcol-center">
+        {% if current_user.picture_url %}
+            <img class="img-avatar" src={{ current_user.picture_url }} aria-label="profile image"/>
+        {% else %}
+            <img class="img-avatar" src={{ url_for('static', filename='default-user.svg') }} aria-label="default profile image"/>
+        {% endif %}
+        <h6>email:<code> {{ current_user.email }}</code></h6>
+        <h6>username:<code> {{ current_user.username }}</code></h6>
+    </div>
+    <div>
+        <form action="" method="post">
+            {{ form.csrf_token }}
+            <div>
+                {{ form.username.label(class="form-control-label") }}
+                {{ form.username(class="form-control form-control-lg space-bottom-sm") }}
+                {% if form.username.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.username.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.picture_url.label(class="form-control-label") }}
+                {{ form.picture_url(class="form-control form-control-lg space-bottom-sm") }}
+                {% if form.picture_url.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.picture_url.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.submit(class="form-control form-control-lg") }}
+            </div>
+        </form>
+    </div>
+    <div>
+        <h3>Your active listings:</h3>
+    </div>
+    <div class="grid">
+    {% for listing in listings %}
+        <article class="col-md-8 col-lg-5 listing-content-section box">
+            <div>
+                <div>
+                    <a href={{ url_for('main.user_detail', username=listing.author.username) }}>{{ listing.author.username }}</a>
+                    <small>on {{ listing.date.strftime('%B %d, %Y') }} listed:</small>
+                </div>
+                <div>
+                    <img class="img-listing" src={{ listing.picture_url }} alt="item picture" />
+                </div>
+                <h5 class="sb__title">{{ listing.title }}</h5>
+                <p>{{ listing.description }}</p>
+            </div>
+            <div class="flexrow-spacebetween">
+                <p><code>Price: ${{ listing.price_in_pennies }}</code></p>
+                <form action={{ url_for('main.index') }}>
+                    <button type="submit" class="btn btn-dark sb__button sb__buy" ><i class="fas fa-wrench"></i><code>&nbsp;Manage</code></button>
+                </form>
+            </div>
+        </article>
+    {% endfor %}
+    </div>
+{% endblock %}

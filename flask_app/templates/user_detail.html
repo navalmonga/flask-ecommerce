@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <h1 class="sb__logo">{{ user.username }}'s Locker</h1>
+    </div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href={{ url_for('main.index') }}>Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ user.username }}</li>
+        </ol>
+    </nav>
+    <div>
+        <div>
+        {% if user.picture_url %}
+            <img class="img-avatar" src={{ user.picture_url }} aria-label="profile image"/>
+        {% else %}
+            <img class="img-avatar" src={{ url_for('static', filename='default-user.svg') }} aria-label="default profile image"/>
+        {% endif %}
+        </div>
+        <h3>{{ user.username }}'s Active Listings:</h3>
+    </div>
+    <div class="grid">
+    {% for listing in listings %}
+        <article class="col-md-8 col-lg-5 listing-content-section box">
+            <div>
+                <div>
+                    <a href={{ url_for('main.user_detail', username=listing.author.username) }}>{{ listing.author.username }}</a>
+                    <small>on {{ listing.date.strftime('%B %d, %Y') }} listed:</small>
+                </div>
+                <div>
+                    <img class="img-listing" src={{ listing.picture_url }} alt="item picture" />
+                </div>
+                <h5 class="sb__title">{{ listing.title }}</h5>
+                <p>{{ listing.description }}</p>
+            </div>
+            <div class="flexrow-spacebetween">
+                <p><code>Price: ${{ listing.price_in_pennies }}</code></p>
+                <form action={{ url_for('main.index') }}>
+                    <button type="submit" class="btn btn-dark sb__button sb__buy" ><i class="fas fa-long-arrow-alt-right"></i><code>&nbsp;buy</code></button>
+                </form>
+            </div>
+        </article>
+    {% endfor %}
+    </div>
+{% endblock %}

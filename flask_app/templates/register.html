@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block nav_register %}active underline{% endblock %}
+{% block content %}
+    <div>
+        <h1 class="sb__logo">Create an account</h1>
+    </div>
+    <div>
+        Already have an account? Jump to <a href={{ url_for('users.login') }}>log in.</a>
+    </div>
+    <!-- Registration Form: -->
+    <div class="flex__wrapper-col-center">
+        <p>
+            <a class="navbar-brand sb__logo" href={{ url_for('main.index' )}}>soldby.io</a>
+        </p>
+        <p class="brand">
+            <img src={{ url_for('static', filename='3d.svg') }} width="36px"/>
+        </p>
+        <form action="" method="post">
+            {{ form.csrf_token }}
+            <div>
+                {{ form.username.label(class="form-control-label") }}
+                {{ form.username(class="form-control form-control-lg") }}
+                {% if form.username.errors %}
+                    <div class="alert alert-warning" role="alert">
+                        {% for error in form.username.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.email.label(class="form-control-label") }}
+                {{ form.email(class="form-control form-control-lg") }}
+                {% if form.email.errors %}
+                    <div class="alert alert-warning" role="alert">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.password.label(class="form-control-label") }}
+                {{ form.password(class="form-control form-control-lg") }}
+                {% if form.password.errors %}
+                    <div class="alert alert-warning" role="alert">
+                        {% for error in form.password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.confirm_password.label(class="form-control-label") }}
+                {{ form.confirm_password(class="form-control form-control-lg") }}
+                {% if form.confirm_password.errors %}
+                    <div class="alert alert-warning" role="alert">
+                        {% for error in form.confirm_password.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <div style="margin-top:5vh;">
+                {{ form.submit(class="form-control form-control-md") }}
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block nav_login %}active underline{% endblock %}
+{% block content %}
+    <div>
+        <h1 class="sb__logo">Log In</h1>
+    </div>
+    <div>
+        If you <b>don't</b> have an account, then <a href={{ url_for('users.register') }}>register.</a>
+    </div>
+    <div class="flex__wrapper-col-center">
+        <p>
+            <a class="navbar-brand sb__logo" href={{ url_for('main.index' )}}>soldby.io</a>
+        </p>
+        <p class="brand">
+            <img src={{ url_for('static', filename='3d.svg') }} width="36px"/>
+        </p>
+        <form action="" method="post">
+            {{ form.csrf_token }}
+            <div>
+                {{ form.username.label(class="form-control-label green-text") }}
+                {{ form.username(class="form-control form-control-md") }}
+
+                {% if form.username.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.username.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+
+            {% endif %}
+            </div>
+            <div>
+                {{ form.password.label(class="form-control-label") }}
+                {{ form.password(class="form-control form-control-lg") }}
+            </div>
+            <div>
+                {{ form.token.label(class="form-control-label green-text") }}
+                {{ form.token(class="form-control form-control-md") }}
+
+                {% if form.token.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.token.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+
+            {% endif %}
+            </div>
+            <div style="margin-top:5vh;">
+                {{ form.submit(class="form-control form-control-md") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

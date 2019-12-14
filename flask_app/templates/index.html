@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block nav_home %}active underline{% endblock %}
+{% block content %}
+    <div>
+        <h1 class="sb__logo">All Listings</h1>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Home</li>
+      </ol>
+    </nav>
+    <div class="grid">
+    {% for listing in listings %}
+        <article class="col-md-8 col-lg-5 listing-content-section">
+            <div>
+                <div>
+                    <a href={{ url_for('main.user_detail', username=listing.author.username) }}>{{ listing.author.username }}</a>
+                    <small>on {{ listing.date.strftime('%B %d, %Y') }} listed:</small>
+                </div>
+                <div>
+                    <img class="img-listing" src={{ listing.picture_url }} alt="item picture" />
+                </div>
+                <h5 class="sb__title">{{ listing.title }}</h5>
+                <p>{{ listing.description }}</p>
+            </div>
+            <div class="flexrow-spacebetween">
+                <p><code>Price: ${{ listing.price_in_pennies }}</code></p>
+                <form action={{ url_for('main.index') }}>
+                    <button type="submit" class="btn btn-dark sb__button sb__buy"><i class="fas fa-long-arrow-alt-right"></i><code>&nbsp;buy</code></button>
+                </form>
+            </div>
+        </article>
+    {% endfor %}
+    </div>
+{% endblock %}

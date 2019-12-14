@@ -1,0 +1,252 @@
+body {
+  font-family: 'Sulphur Point', 'Source Sans Pro', sans-serif;
+  background-color:#000000;
+  color:#ffffff;
+}
+
+.video-bg {
+  position:fixed;
+  top:0;
+  left:0;
+  right: 0;
+  z-index: -99;
+  width: auto;
+  height: 150%;
+  opacity: 0.35;
+}
+
+.flex__wrapper-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 1em;
+}
+
+.flex__wrapper-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+.sb__logo {
+  font-family: 'Sulphur Point', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.sb__title {
+  font-family: 'Sulphur Point', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-color: #FC3E81;
+}
+
+.sb__logo:hover {
+  color: #ffffff;
+}
+
+.sb__subtitle {
+  font-family: 'Sulphur Point', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  margin-bottom: 3em;
+}
+
+.sb__button {
+  font-family: 'Sulphur Point', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 10em;
+  margin-right: 0.5em;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sb__button code {
+  color: #FFFFFF;
+}
+
+.sb__button i{
+  color: #FFFFFF !important;
+}
+
+.sb__button:hover {
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+  justify-content: space-between;
+}
+
+.sb__navbutton {
+  margin-top: 1em;
+}
+
+.pink code{
+  color: #FFFFFF !important;
+}
+
+.pink i{
+  color: #FC3E81 !important;
+}
+
+.navbar-dark .nav-item .nav-link{
+  font-family: 'Sulphur Point', sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-dark .nav-item {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.navbar-dark .nav-item:hover {
+  background-color:#23272B;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar-dark .nav-item i{
+  color: #FFFFFF;
+}
+
+.unsplash__bg {
+  background: 
+    linear-gradient(
+    rgba(10, 10, 10, 0.9), 
+    rgba(10, 10, 10, 0.9)
+    ),url("./constellation.svg");
+  overflow-y: scroll;
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+.content-container {
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: scroll;
+  padding: 1em 1em;
+}
+
+.qr-container {
+  background-color: #FFFFFF;
+  width: auto;
+}
+
+.space-bottom-sm {
+  margin-bottom: 1em;
+}
+
+.img-avatar {
+  width: 5em;
+  height: 5em;
+  border-radius: 2.5em;
+}
+
+.img-nav-avatar {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 0.75em;
+}
+
+.img-listing {
+  margin-top: 1em;
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: 10em;
+}
+
+.flexcol-center {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexcol-center h6 {
+  align-self: flex-start;
+}
+
+.flexrow-spacebetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.grid {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.listing-content-section {
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #303030;
+  padding: 1em 1em;
+  margin: 1em;
+  border: 2px solid #FC3E81;
+  border-radius: 10px;
+  border-style: double;
+  display: flex;
+  flex-direction: column;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Scale up the box */
+.listing-content-section:hover {
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+  box-shadow: 0 5px 15px rgba(252, 62, 129, 0.9);
+}
+
+.underline{
+  border-top: 2.5px solid #FC3E81;
+  border-top-style: dotted;
+  -webkit-animation : pulse 0.25s;
+  -moz-animation    : pulse 0.25s;
+  -o-animation      : pulse 0.25s;
+  animation         : pulse 0.25s;
+}
+
+.active {
+  color: #FC3E81 !important;
+}
+
+@keyframes pulse {
+  0% {
+      transform: translate(0,-50%);
+  }
+  50% {
+      transform : translate(0,-35%);
+  }
+  to {
+      transform : translate(0,0%);
+  }
+}
+
