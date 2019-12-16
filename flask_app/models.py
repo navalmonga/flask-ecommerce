@@ -17,6 +17,7 @@ class User(db.Model, UserMixin):
   picture_url = db.Column(db.String(60), nullable=True)
 
   listings = db.relationship('Listing', backref='author', lazy=True)
+  cart = db.relationship('CartItem', backref='user', lazy=True)
 
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
@@ -47,6 +48,14 @@ class Listing(db.Model):
   date = db.Column(db.DateTime, nullable=False, default=datetime.now)
 
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+  cart = db.relationship('CartItem', backref='listing', lazy=True)
   
   def __repr__(self):
     return "Listing('%s','%s','%s')" % (self.title, self.description, self.price_in_pennies)
+
+class CartItem(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  counter = db.Column(db.Integer)
+  price = db.Column(db.Integer)
+  listing_id = db.Column(db.Integer, db.ForeignKey('listing.id'), nullable=False)
+  user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)

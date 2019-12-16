@@ -92,10 +92,12 @@ def create_app():
   from flask_app.main.routes import main
   from flask_app.users.routes import users
   from flask_app.listings.routes import listings
+  from flask_app.cart.routes import cart
 
   app.register_blueprint(main)
   app.register_blueprint(users)
   app.register_blueprint(listings)
+  app.register_blueprint(cart)
 
   with app.app_context():
     db.create_all()

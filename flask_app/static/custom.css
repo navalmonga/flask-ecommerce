@@ -66,9 +66,9 @@ body {
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  min-width: 10em;
+  min-width: 5em;
   margin-right: 0.5em;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -134,7 +134,6 @@ body {
     rgba(10, 10, 10, 0.9), 
     rgba(10, 10, 10, 0.9)
     ),url("./constellation.svg");
-  overflow-y: scroll;
   background-repeat: repeat;
   background-size: 200px 200px;
 }
@@ -142,7 +141,6 @@ body {
 .content-container {
   justify-content: center;
   align-items: flex-start;
-  overflow-y: scroll;
   padding: 1em 1em;
 }
 
@@ -200,7 +198,7 @@ body {
   flex: 1;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .listing-content-section {

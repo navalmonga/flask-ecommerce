@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block nav_cart %}active underline{% endblock %}
+{% block content %}
+    <div>
+        <h1 class="sb__logo">Your Cart</h1>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href={{ url_for('main.index') }}>Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+      </ol>
+    </nav>
+    <div>
+        <h5>Customer ID: {{current_user.id}}</h5>
+    </div>
+    <div class="grid">
+    {% for listing in cart %}
+        <article class="col-md-8 col-lg-10 listing-content-section">
+            <div>
+                <div>
+                    <a href={{ url_for('main.user_detail', username=listing.user.username) }}>{{ listing.user.username }}</a>
+                </div>
+                <div>
+                    <img class="img-listing" src={{ listing.listing.picture_url }} alt="item picture" />
+                </div>
+                <h5 class="sb__title">{{ listing.listingtitle }}</h5>
+                <p>{{ listing.listing.description }}</p>
+            </div>
+            <div class="flexrow-spacebetween">
+                <p><code>Price: ${{ listing.listing.price_in_pennies }}</code></p>
+                <form action={{ url_for('cart.remove_from_cart', listing_id=listing.id) }}>
+                    <button type="submit" class="btn btn-danger sb__button sb__buy"><i class="fas fa-long-arrow-alt-left"></i><code>&nbsp;Remove</code></button>
+                </form>
+            </div>
+        </article>
+    {% endfor %}
+    </div>
+{% endblock %}
