@@ -39,6 +39,7 @@ csp = {
   ],
   'style-src-elem': [
     '\'self\'',
+    '\'unsafe-inline\'',
     '*'
   ],
   'img-src': [
