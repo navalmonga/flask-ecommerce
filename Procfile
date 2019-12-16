@@ -1,0 +1,1 @@
+web: gunicorn "{app_file}:create_app()"
