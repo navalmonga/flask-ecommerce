@@ -43,12 +43,13 @@
                         <a href={{ url_for('main.about') }} class="nav-link {% block nav_about %}{% endblock %}"><i class="fas fa-stroopwafel"></i>&nbsp;About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fab fa-vuejs"></i>&nbsp;Dropdown</a>
+                        <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fab fa-vuejs"></i>&nbsp;More</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href={{ url_for('main.plotly') }}>Plotly</a>
+                            <a class="dropdown-item" href="#">Contact Us</a>
+                            <a class="dropdown-item" href="#">Jobs</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                            <a class="dropdown-item" href="#">Report an issue</a>
                         </div>
                     </li>
                 </ul>

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+      <h1 class="sb__logo">Manage Listing</h1>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href={{ url_for('main.index') }}>Home</a></li>
+        <li class="breadcrumb-item"><a href={{ url_for('users.account') }}>Account</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Manage Listing</li>
+      </ol>
+    </nav>
+    {% if listing.picture_url %}
+    <div>
+      <article class="listing-content-section">
+        <div>
+            <div>
+                <a href={{ url_for('main.user_detail', username=listing.author.username) }}>{{ listing.author.username }}</a>
+                <small>on {{ listing.date.strftime('%B %d, %Y') }} listed:</small>
+            </div>
+            <div>
+                <img class="img-listing" src={{ listing.picture_url }} alt="item picture" />
+            </div>
+            <h5 class="sb__title">{{ listing.title }}</h5>
+            <p class="">{{ listing.description }}</p>
+        </div>
+        <div class="flexrow-spacebetween">
+            <p><code>Price: ${{ listing.price_in_pennies }}</code></p>
+        </div>
+      </article>
+    </div>
+    {% endif %}
+    <div>
+       <form action="" method="post">
+            {{ form.csrf_token }}
+            <div>
+                {{ form.item_name.label(class="form-control-label") }}
+                {{ form.item_name(class="form-control form-control-lg space-bottom-sm") }}
+                {% if form.item_name.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.item_name.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.item_desc.label(class="form-control-label") }}
+                {{ form.item_desc(class="form-control form-control-lg space-bottom-sm") }}
+                {% if form.item_desc.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.item_desc.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.price.label(class="form-control-label") }}
+                {{ form.price(class="form-control form-control-lg space-bottom-sm") }}
+                {% if form.price.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.price.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.item_picture_url.label(class="form-control-label") }}
+                {{ form.item_picture_url(class="form-control form-control-lg space-bottom-sm") }}
+                {% if form.item_picture_url.errors %}
+                <div class="alert alert-warning" role="alert">
+                    {% for error in form.item_picture_url.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div>
+                {{ form.submit(class="form-control form-control-lg") }}
+            </div>
+        </form>
+    </div>
+    
+{% endblock %}

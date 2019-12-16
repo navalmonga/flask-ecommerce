@@ -4,6 +4,10 @@ body {
   color:#ffffff;
 }
 
+.white-border {
+  border-color: #FFFFFF;
+}
+
 .video-bg {
   position:fixed;
   top:0;
@@ -57,6 +61,11 @@ body {
   letter-spacing: 0.25rem;
   text-transform: uppercase;
   margin-bottom: 3em;
+}
+
+.sb__underline {
+  text-decoration: underline;
+  text-decoration-color: #FC3E81;
 }
 
 .sb__button {
@@ -171,6 +180,13 @@ body {
   margin: 0 auto;
   width: auto;
   height: 10em;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.img-listing:hover {
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
 }
 
 .flexcol-center {
@@ -218,8 +234,7 @@ body {
 
 /* Scale up the box */
 .listing-content-section:hover {
-  -webkit-transform: scale(1.05, 1.05);
-  transform: scale(1.05, 1.05);
+  
   box-shadow: 0 5px 15px rgba(252, 62, 129, 0.9);
 }
 

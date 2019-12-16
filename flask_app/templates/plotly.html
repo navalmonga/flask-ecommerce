@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block nav_account %}active underline{% endblock %}
+{% block content %}
+    <div>
+      <h1 class="sb__logo">Plotly</h1>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href={{ url_for('main.index') }}>Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Plotly Example</li>
+      </ol>
+    </nav>
+    <div>
+      <h5 class="sb__subtitle">Application analytics can be found in new browser window at <code>http://127.0.0.1:5560*/</code></h5>
+    </div>
+{% endblock %}
