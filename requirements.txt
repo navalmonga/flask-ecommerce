@@ -14,7 +14,6 @@ Flask-Login==0.4.1
 Flask-SQLAlchemy==2.4.1
 flask-talisman==0.7.0
 Flask-WTF==0.14.2
-gmpy2==2.0.8
 heapdict==1.0.0
 imageio==2.4.1
 ipython-genutils==0.2.0
