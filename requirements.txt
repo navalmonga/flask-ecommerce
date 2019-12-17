@@ -6,7 +6,7 @@ boto==2.49.0
 certifi==2018.11.29
 cffi==1.13.2
 Click==7.0
-conda==4.5.12
+conda
 docutils==0.14
 entrypoints==0.2.3
 Flask==1.1.1
