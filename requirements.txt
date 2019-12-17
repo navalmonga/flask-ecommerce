@@ -2,7 +2,6 @@ alabaster==0.7.12
 anaconda==0.0.1.1
 anaconda-client
 appnope==0.1.0
-appscript==1.0.1
 asn1crypto==0.24.0
 astroid==2.1.0
 astropy==3.1
