@@ -1,5 +1,4 @@
 appnope==0.1.0
-appscript==1.0.1
 bcrypt==3.1.7
 bitarray==0.8.3
 boto==2.49.0
