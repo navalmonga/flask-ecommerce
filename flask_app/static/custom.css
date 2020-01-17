@@ -1,11 +1,8 @@
 body {
-  font-family: 'Sulphur Point', 'Source Sans Pro', sans-serif;
-  background-color:#000000;
-  color:#ffffff;
-}
-
-.white-border {
-  border-color: #FFFFFF;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  background-color: #F8FAFE;
+  color:hsla(200,0%,0%,.7);
+  border-top: 2px solid #0f4c81;
 }
 
 .video-bg {
@@ -16,14 +13,14 @@ body {
   z-index: -99;
   width: auto;
   height: 150%;
-  opacity: 0.35;
+  opacity: 0.65;
 }
 
 .flex__wrapper-col {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-top: 1em;
+  padding-top: 10em;
 }
 
 .flex__wrapper-col-center {
@@ -35,60 +32,50 @@ body {
 }
 
 .sb__logo {
-  font-family: 'Sulphur Point', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.25rem;
+  font-weight: 400;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  color: #ffffff;
+  color:hsla(200,0%,0%,.7);
+  padding-left: 1px;
 }
 
 .sb__title {
-  font-family: 'Sulphur Point', sans-serif;
   font-weight: 700;
-  letter-spacing: 0.25rem;
   text-transform: uppercase;
   text-decoration: underline;
-  text-decoration-color: #FC3E81;
-}
-
-.sb__logo:hover {
-  color: #ffffff;
+  text-decoration-color: #0f4c81;
 }
 
 .sb__subtitle {
-  font-family: 'Sulphur Point', sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.25rem;
+  font-weight: 400;
+  color: #000;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   margin-bottom: 3em;
 }
 
 .sb__underline {
   text-decoration: underline;
-  text-decoration-color: #FC3E81;
+  text-decoration-color: #0f4c81;
 }
 
 .sb__button {
-  font-family: 'Sulphur Point', sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.25rem;
+  font-weight: 700;
   text-transform: uppercase;
+  width: 25vw;
+  margin-bottom: 1vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-width: 5em;
-  margin-right: 0.5em;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
-.sb__button code {
-  color: #FFFFFF;
-}
-
-.sb__button i{
-  color: #FFFFFF !important;
+@media only screen and (max-width: 800px) {
+  .sb__button {
+    width: 100%;
+    margin-bottom: 1vh;
+  }
 }
 
 .sb__button:hover {
@@ -97,55 +84,6 @@ body {
   justify-content: space-between;
 }
 
-.sb__navbutton {
-  margin-top: 1em;
-}
-
-.pink code{
-  color: #FFFFFF !important;
-}
-
-.pink i{
-  color: #FC3E81 !important;
-}
-
-.navbar-dark .nav-item .nav-link{
-  font-family: 'Sulphur Point', sans-serif;
-  font-weight: 300;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar-dark .nav-item {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-
-}
-
-.navbar-dark .nav-item:hover {
-  background-color:#23272B;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.navbar-dark .nav-item i{
-  color: #FFFFFF;
-}
-
-.unsplash__bg {
-  background: 
-    linear-gradient(
-    rgba(10, 10, 10, 0.9), 
-    rgba(10, 10, 10, 0.9)
-    ),url("./constellation.svg");
-  background-repeat: repeat;
-  background-size: 200px 200px;
-}
 
 .content-container {
   justify-content: center;
@@ -223,9 +161,8 @@ body {
   color: #303030;
   padding: 1em 1em;
   margin: 1em;
-  border: 2px solid #FC3E81;
+  border: 2px solid #0f4c81;
   border-radius: 10px;
-  border-style: double;
   display: flex;
   flex-direction: column;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -235,31 +172,18 @@ body {
 /* Scale up the box */
 .listing-content-section:hover {
   
-  box-shadow: 0 5px 15px rgba(252, 62, 129, 0.9);
+  box-shadow: 0 5px 15px rgba(15, 76, 129, 0.9);
 }
 
 .underline{
-  border-top: 2.5px solid #FC3E81;
-  border-top-style: dotted;
-  -webkit-animation : pulse 0.25s;
-  -moz-animation    : pulse 0.25s;
-  -o-animation      : pulse 0.25s;
-  animation         : pulse 0.25s;
+  border-bottom: 2.5px solid #0f4c81;
 }
 
 .active {
-  color: #FC3E81 !important;
+  color: #0f4c81 !important;
 }
 
-@keyframes pulse {
-  0% {
-      transform: translate(0,-50%);
-  }
-  50% {
-      transform : translate(0,-35%);
-  }
-  to {
-      transform : translate(0,0%);
-  }
+code {
+  color: #0f4c81;
 }
 

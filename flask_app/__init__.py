@@ -12,15 +12,13 @@ csp = {
   ],
   'script-src': [
     'https://code.jquery.com/',
-    'https://cdnjs.cloudflare.com/ajax/libs/popper.js/',
-    'https://maxcdn.bootstrapcdn.com/bootstrap/',
+    'https://cdn.jsdelivr.net/',
     'https://stackpath.bootstrapcdn.com/bootstrap/',
     'https://kit.fontawesome.com/f69b7244e9.js',
     'https://use.fontawesome.com/',
     '\'self\''
   ],
   'style-src': [
-    'https://maxcdn.bootstrapcdn.com/bootstrap/',
     'https://stackpath.bootstrapcdn.com/bootstrap/',
     'https://kit-free.fontawesome.com',
     'https://fonts.googleapis.com/',

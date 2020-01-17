@@ -2,18 +2,18 @@
 {% block nav_register %}active underline{% endblock %}
 {% block content %}
     <div>
-        <h1 class="sb__logo">Create an account</h1>
+        <h1 class="sb__title">register</h1>
     </div>
     <div>
         Already have an account? Jump to <a class="sb__underline" href={{ url_for('users.login') }}>log in.</a>
     </div>
     <!-- Registration Form: -->
     <div class="flex__wrapper-col-center">
+        <p class="brand">
+            <img src={{ url_for('static', filename='favicon_io/apple-touch-icon.png') }} style="width: 3em"/>
+        </p>
         <p>
             <a class="navbar-brand sb__logo" href={{ url_for('main.index' )}}>soldby.io</a>
-        </p>
-        <p class="brand">
-            <img src={{ url_for('static', filename='3d.svg') }} width="36px"/>
         </p>
         <form action="" method="post">
             {{ form.csrf_token }}

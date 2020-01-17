@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <div>
-        <h1 class="sb__logo">{{ user.username }}'s Locker</h1>
+        <h1 class="sb__title">{{ user.username }}'s Locker</h1>
     </div>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -36,7 +36,7 @@
             <div class="flexrow-spacebetween">
                 <p><code>Price: ${{ listing.price_in_pennies }}</code></p>
                 <form action={{ url_for('main.index') }}>
-                    <button type="submit" class="btn btn-dark sb__button sb__buy" ><i class="fas fa-long-arrow-alt-right"></i><code>&nbsp;buy</code></button>
+                    <button type="submit" class="btn btn-light sb__button">add to cart</button>
                 </form>
             </div>
         </article>

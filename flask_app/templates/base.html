@@ -1,56 +1,47 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buy and sell, shipping included.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <link rel="apple-touch-icon" sizes="180x180" href={{ url_for('static', filename='apple-touch-icon.png') }}>
-    <link rel="icon" type="image/png" sizes="32x32" href={{ url_for('static', filename='favicon-32x32.png') }}>
-    <link rel="icon" type="image/png" sizes="16x16" href={{ url_for('static', filename='favicon-16x16.png') }}>
-    <link rel="manifest" href={{ url_for('static', filename='site.webmanifest') }}>
+    <link rel="apple-touch-icon" sizes="180x180" href={{ url_for('static', filename='favicon_io/apple-touch-icon.png') }}>
+    <link rel="icon" type="image/png" sizes="32x32" href={{ url_for('static', filename='favicon_io/favicon-32x32.png') }}>
+    <link rel="icon" type="image/png" sizes="16x16" href={{ url_for('static', filename='favicon_io/favicon-16x16.png') }}>
+    <link rel="manifest" href={{ url_for('static', filename='favicon_io/site.webmanifest') }}>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href={{ url_for('static', filename='custom.css') }}>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900&display=swap">
-    <link href="https://fonts.googleapis.com/css?family=Sulphur+Point:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,400,700&display=swap" rel="stylesheet"> 
     <!-- <script src="https://use.fontawesome.com/df56271fe5.js"></script> -->
     <link href={{ url_for('static', filename='faweb/css/all.css') }} rel="stylesheet"> <!--load all styles -->
     <script defer src={{ url_for('static', filename='faweb/js/all.js') }}></script>
     {% if title %}
-        <title>{{ title }} / soldby.io / 338J</title>
+        <title>{{ title }} - soldby.io</title>
     {% else %}
-        <title>soldby.io / 338J</title>
+        <title>soldby.io</title>
     {% endif %}
 </head>
-<body class="unsplash__bg"> 
+<body> 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-inverse">
+        <nav class="navbar navbar-expand-lg navbar-light bg-inverse">
             <span class="brand">
-              <img src={{ url_for('static', filename='3d.svg') }} style="width: 1.5em"/>
+              <img src={{ url_for('static', filename='favicon_io/apple-touch-icon.png') }} style="width: 1.5em" alt="soldby logo"/>
             </span>
             <a class="navbar-brand sb__logo" href={{ url_for('main.index' )}} style="margin-left:0.25rem">soldby.io</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fab fa-vuejs" style="color:#ffffff"></i>
+                <i class="fas fa-arrow-down fa-xs" style="color:#000"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a href={{ url_for('main.index') }} class="nav-link {% block nav_home %}{% endblock %}"><i class="fas fa-igloo"></i>&nbsp;Home</a>
+                        <a href={{ url_for('main.index') }} class="nav-link {% block nav_home %}{% endblock %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href={{ url_for('main.about') }} class="nav-link {% block nav_about %}{% endblock %}"><i class="fas fa-stroopwafel"></i>&nbsp;About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fab fa-vuejs"></i>&nbsp;More</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href={{ url_for('main.plotly') }}>Plotly</a>
-                            <a class="dropdown-item" href="#">Contact Us</a>
-                            <a class="dropdown-item" href="#">Jobs</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Report an issue</a>
-                        </div>
+                        <a href={{ url_for('main.about') }} class="nav-link {% block nav_about %}{% endblock %}">About</a>
                     </li>
                 </ul>
 
@@ -58,22 +49,24 @@
                 <ul class="nav navbar-nav ml-auto justify-content-end">
                     <li class="nav-item-not">
                         <form action={{ url_for('listings.create_listing') }}>
-                            <button type="submit" class="btn btn-dark sb__button sb__navbutton"><i class="far fa-plus-square"></i><code>&nbsp;Sell</code></button>
+                            <button type="submit" class="btn btn-light sb__button">Sell an item</code></button>
                         </form>
                     </li>
                     <li class="nav-item">
-                        {% if current_user.picture_url %}
-                        <img class="img-nav-avatar" src={{ current_user.picture_url }} alt="profile image" style="border-radius:0.75em;"/>
-                        {% else %}
-                        <img class="img-nav-avatar" src={{ url_for('static', filename='default-user.svg') }} alt="default profile image" />
-                        {% endif %}
-                        <a href={{ url_for('users.account' )}} class="nav-link {% block nav_account %}{% endblock %}">&nbsp;{{ current_user.username }}</a>
+                        <a href={{ url_for('users.account' )}} class="nav-link {% block nav_account %}{% endblock %}">
+                            {% if current_user.picture_url %}
+                            <img class="img-nav-avatar" src={{ current_user.picture_url }} alt="profile image" style="border-radius:0.75em;"/>
+                            {% else %}
+                            <img class="img-nav-avatar" src={{ url_for('static', filename='default-user.svg') }} alt="default profile image" />
+                            {% endif %}
+                            {{ current_user.username }}
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a href={{ url_for('cart.user_cart' )}} class="nav-link {% block nav_cart %}{% endblock %}"><i class="fas fa-shopping-cart"></i>&nbsp;Cart({{current_user.cart | length}})</a>
                     </li>
                     <li class="nav-item">
-                        <a href={{ url_for('users.logout' )}} class="nav-link"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                        <a href={{ url_for('users.logout' )}} class="nav-link">Logout</a>
                     </li>
                 </ul>
 
@@ -81,10 +74,10 @@
 
                 <ul class="nav navbar-nav ml-auto justify-content-end">
                     <li class="nav-item">
-                        <a href={{ url_for('users.login' )}} class="nav-link {% block nav_login %}{% endblock %}"><span class="faspan">🔓</span>&nbsp;Login</a>
+                        <a href={{ url_for('users.login' )}} class="nav-link {% block nav_login %}{% endblock %}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a href={{ url_for('users.register' )}} class="nav-link {% block nav_register %}{% endblock %}"><span class="faspan">⚡️</span>&nbsp;Register</a>
+                        <a href={{ url_for('users.register' )}} class="nav-link {% block nav_register %}{% endblock %}">Register</a>
                     </li>
                 </ul>
                 {% endif %}
@@ -112,9 +105,9 @@
     <script src={{ url_for('static', filename='js/bootstrap.min.js' )}}></script>
     -->
     
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <!--<script src="https://kit.fontawesome.com/f69b7244e9.js" crossorigin="anonymous"></script>-->
 </body>
 </html>
