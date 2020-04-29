@@ -11,16 +11,16 @@
       </ol>
     </nav>
     -->
-    <div class="flex__wrapper-col">
-        <h5 class="sb__subtitle">Buy 🛒 and sell 💸, shipping 📦 included.</h5>
+    <div class="banner">
+        <h3>Buy and sell 🛒,<br/>shipping included 💸.</h3>
         <form action={{ url_for('users.login') }}>
-            <button type="submit" class="btn btn-light sb__button">login&nbsp;<i class="fas fa-long-arrow-alt-right"></i></button>
+            <button type="submit" class="btn btn-light sb__button">login<span></span>&nbsp;&rarr;</button>
         </form>
         <form action={{ url_for('users.register') }}>
-            <button type="submit" class="btn btn-light sb__button">create an account&nbsp;<i class="fas fa-long-arrow-alt-right"></i></button>
+            <button type="submit" class="btn btn-light sb__button">get started<span></span>&nbsp;&rarr;</button>
         </form>
     </div>
     <video autoplay muted loop class="video-bg">
-      <source src={{ url_for('static', filename='times-square-timelapse.mp4') }} type="video/mp4">
+      <source src="https://jlassets.s3.amazonaws.com/mp4/times-square-timelapse.mp4" type="video/mp4">
     </video>
 {% endblock %}

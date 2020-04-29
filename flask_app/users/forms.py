@@ -45,7 +45,7 @@ class LoginForm(FlaskForm):
 class UpdateForm(FlaskForm):
     username = StringField('Change username:', validators=[DataRequired(), Length(min=2, max=30)])
     picture_url = StringField('Profile URL', validators=[URL()])
-    submit = SubmitField('Update')
+    submit = SubmitField('Update settings')
 
     def validate_username(self, username):
         if username.data != current_user.username:

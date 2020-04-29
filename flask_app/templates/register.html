@@ -2,19 +2,16 @@
 {% block nav_register %}active underline{% endblock %}
 {% block content %}
     <div>
-        <h1 class="sb__title">register</h1>
+        <h1 class="page-title">register</h1>
     </div>
     <div>
-        Already have an account? Jump to <a class="sb__underline" href={{ url_for('users.login') }}>log in.</a>
+        Already have an account? Jump to <a href={{ url_for('users.login') }}>log in.</a>
     </div>
     <!-- Registration Form: -->
     <div class="flex__wrapper-col-center">
-        <p class="brand">
-            <img src={{ url_for('static', filename='favicon_io/apple-touch-icon.png') }} style="width: 3em"/>
-        </p>
-        <p>
-            <a class="navbar-brand sb__logo" href={{ url_for('main.index' )}}>soldby.io</a>
-        </p>
+        <a href={{ url_for('main.index' )}}>
+            <img src={{ url_for('static', filename='case-d.svg') }} width="72px" alt="soldby logo"/>
+        </a>
         <form action="" method="post">
             {{ form.csrf_token }}
             <div>
@@ -61,8 +58,8 @@
                     </div>
                 {% endif %}
             </div>
-            <div style="margin-top:5vh;">
-                {{ form.submit(class="form-control form-control-md") }}
+            <div style="margin-top:1rem;">
+                {{ form.submit(class="form-control form-control-md sb__button") }}
             </div>
         </form>
     </div>

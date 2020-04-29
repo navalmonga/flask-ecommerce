@@ -44,7 +44,10 @@ csp = {
     '\'self\'',
     'data:',
     '*',
-  ]
+  ],
+  'media-src': [
+    'https://jlassets.s3.amazonaws.com/',
+  ],
 }
 
 dictConfig(

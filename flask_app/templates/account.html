@@ -2,7 +2,7 @@
 {% block nav_account %}active underline{% endblock %}
 {% block content %}
     <div>
-      <h1 class="sb__title">Account</h1>
+      <h1 class="page-title">Account</h1>
     </div>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -16,8 +16,8 @@
         {% else %}
             <img class="img-avatar" src={{ url_for('static', filename='default-user.svg') }} aria-label="default profile image"/>
         {% endif %}
-        <h6>email:<code> {{ current_user.email }}</code></h6>
-        <h6>username:<code> {{ current_user.username }}</code></h6>
+        <h6>Email:<code> {{ current_user.email }}</code></h6>
+        <h6>Username:<code> {{ current_user.username }}</code></h6>
     </div>
     <div>
         <form action="" method="post">
@@ -45,7 +45,7 @@
                 {% endif %}
             </div>
             <div>
-                {{ form.submit(class="form-control form-control-lg") }}
+                {{ form.submit(class="form-control form-control-lg sb__button") }}
             </div>
         </form>
     </div>

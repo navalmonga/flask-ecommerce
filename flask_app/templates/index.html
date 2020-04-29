@@ -2,7 +2,7 @@
 {% block nav_home %}active underline{% endblock %}
 {% block content %}
     <div>
-        <h1 class="sb__title">All Listings</h1>
+        <h1 class="page-title">Explore</h1>
     </div>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -11,7 +11,7 @@
     </nav>
     <div class="grid">
     {% for listing in listings %}
-        <article class="col-md-8 col-lg-5 listing-content-section">
+        <article class="col-md-8 col-lg-4 listing-content-section">
             <div>
                 <div>
                     <a href={{ url_for('main.user_detail', username=listing.author.username) }}>{{ listing.author.username }}</a>
@@ -26,7 +26,7 @@
             <div class="flexrow-spacebetween">
                 <p><code>Price: ${{ listing.price_in_pennies }}</code></p>
                 <form action={{ url_for('cart.add_to_cart', listing_id=listing.id) }}>
-                    <button type="submit" class="btn btn-light sb__button">add to cart</button>
+                    <button type="submit" class="btn btn-light sb__button">add to cart<span></span>&nbsp;&rarr;</button>
                 </form>
             </div>
         </article>

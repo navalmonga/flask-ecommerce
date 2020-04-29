@@ -2,7 +2,7 @@
 {% block nav_about %}active underline{% endblock %}
 {% block content %}
     <div>
-      <h1 class="sb__title">about us</h1>
+      <h1 class="page-title">about</h1>
     </div>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -11,22 +11,11 @@
       </ol>
     </nav>
     <div>
-        <h5 class="sb__subtitle sb__underline">Team Members:</h5>
-        <ul>
-          <li>Naval Monga</li>
-          <li>Marvin Xu</li>
-          <li>Ivan Khokhlov</li>
-        </ul>
-        <hr class="white-border"/>
-        <h5 class="sb__subtitle sb__underline">Project Description:</h5>
+        <h2 class="page-subtitle">Description:</h2>
         <p><code>Secure, E-Commerce Flask Application</code></p>
-        <p>
-          For this project, you’ll be working in groups of up to three people to develop a fully-fledged Flask web application, using everything you’ve learned this semester.
+          This project demonstrates a web application with a backend database, secured forms, and a user management system. The users of your website should have a reason to make an account. For example, they might need to sign in to favorite an item, create a post, or purchase something.
         </p>
-        <p>
-          This project is for creating a web application with a backend database, secured forms, and a user management system. The users of your website should have a reason to make an account. For example, they might need to sign in to favorite an item, create a post, or purchase something.
-        </p>
-        <hr class="white-border">
+        <p><code>Technologies</code></p>
         <ul>
           <li>Login/Registration w/ 2FA (Flask-Login)</li>
           <li>CSP (Flask-Talisman)</li>
@@ -35,8 +24,6 @@
           <li>Bootstrap</li>
           <li>Font Awesome Icons</li>
         </ul>
-        <hr class="white-border"/>
-        <h5 class="sb__subtitle sb__underline">Project Writeup:</h5>
     </div>
     
 {% endblock %}

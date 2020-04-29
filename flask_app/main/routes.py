@@ -2,31 +2,6 @@ from flask import render_template, Blueprint, request, current_app, redirect, ur
 from flask_login import current_user
 from flask_app.models import Listing, User
 
-import plotly
-import plotly.graph_objs as go
-
-import pandas as pd
-import numpy as np
-import json
-
-
-def create_plot():
-  N = 40
-  x = np.linspace(0, 1, N)
-  y = np.random.randn(N)
-  df = pd.DataFrame({'x': x, 'y': y}) # creating a sample dataframe
-
-
-  data = [
-      go.Bar(
-          x=df['x'], # assign x as the dataframe column 'x'
-          y=df['y']
-      )
-  ]
-  print(data)
-  graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
-
-  return graphJSON
 
 main = Blueprint('main', __name__)
 
@@ -45,25 +20,6 @@ def welcome():
 @main.route("/about")
 def about():
     return render_template('about.html', title='About')
-
-@main.route("/plotly")
-def plotly():
-  listings = Listing.query.all()
-  users = User.query.all()
-  numUsers = len(users)
-  numListings = len(listings)
-  fig = go.Figure(
-    data=[go.Bar(y=[numListings])],
-    layout_title_text="Active Listings"
-  )
-  fig2 = go.Figure(
-    data=[go.Bar(y=[numUsers])],
-    layout_title_text="Active Users"
-  )
-  fig.show()
-  fig2.show()
-  #bar = create_plot()
-  return render_template('plotly.html', title='Plotly')
 
 @main.route("/user/<username>")
 def user_detail(username):

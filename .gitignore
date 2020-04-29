@@ -15,6 +15,12 @@ _mailinglist
 .pytest_cache/
 .idea/
 docs/_build/
+.Python
+pip-selfcheck.json
+__pycache__/
+bin
+lib/
+include/
 
 # Coverage reports
 htmlcov/
