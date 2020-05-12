@@ -18,9 +18,10 @@ docs/_build/
 .Python
 pip-selfcheck.json
 __pycache__/
-bin
+bin/
 lib/
 include/
+site.db
 
 # Coverage reports
 htmlcov/
