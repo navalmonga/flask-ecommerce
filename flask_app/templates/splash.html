@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block nav_home %}active underline{% endblock %}
+{% block nav_home %}active{% endblock %}
 {% block content %}
     <!--
     <div>
@@ -12,15 +12,13 @@
     </nav>
     -->
     <div class="banner">
-        <h3>Buy and sell 🛒,<br/>shipping included 💸.</h3>
+        <h2 class="page-subtitle">Buy &amp; sell 🛒,<br/><br/>shipping included 💸.</h2>
         <form action={{ url_for('users.login') }}>
-            <button type="submit" class="btn btn-light sb__button">login<span></span>&nbsp;&rarr;</button>
+            <button type="submit" class="btn sb__button">login<span></span>&nbsp;&rarr;</button>
         </form>
+        <br/>
         <form action={{ url_for('users.register') }}>
-            <button type="submit" class="btn btn-light sb__button">get started<span></span>&nbsp;&rarr;</button>
+            <button type="submit" class="btn sb__button">join for free<span></span>&nbsp;&rarr;</button>
         </form>
     </div>
-    <video autoplay muted loop class="video-bg">
-      <source src="https://jlassets.s3.amazonaws.com/mp4/times-square-timelapse.mp4" type="video/mp4">
-    </video>
 {% endblock %}

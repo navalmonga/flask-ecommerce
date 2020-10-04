@@ -5,6 +5,9 @@ from flask_talisman import Talisman
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
+import sass
+import os
+
 
 csp = {
   'default-src': [
@@ -99,7 +102,6 @@ def create_app():
   app.register_blueprint(users)
   app.register_blueprint(listings)
   app.register_blueprint(cart)
-
   with app.app_context():
     db.create_all()
   return app

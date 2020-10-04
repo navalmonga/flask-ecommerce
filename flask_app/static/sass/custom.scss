@@ -1,0 +1,103 @@
+$shpr-bgcolor: #333333;
+$shpr-primary:  #e43137;
+$shpr-text: #F5F8FA;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  background-color: $shpr-bgcolor;
+  color: $shpr-text;
+}
+
+a {
+  color: $shpr-primary;
+  opacity: 0.90;
+  transition: all 0.3s ease-in;
+  &:hover {
+    color: $shpr-primary;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.active {
+  opacity: 1;
+  color: $shpr-primary !important;
+}
+
+.nav-link {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 3em;
+  h2 {
+    text-transform: uppercase;
+  }
+}
+
+.sb__button {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #f5f5f5 !important;
+  width: 12rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.sb__button span{
+  transition: all 1.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition: all 1.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 0px;
+}
+
+.sb__button:hover span{
+  flex: 1;
+}
+
+@media only screen and (max-width: 800px) {
+  .sb__button {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}
+
+.sb__button:hover {
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+}
+
+.col-fc {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-header {
+  @extend .col-fc;
+  h1 {
+    text-transform: uppercase;
+  }
+}
+
+.ct {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+code {
+  color: $shpr-primary;
+}

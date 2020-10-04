@@ -1,13 +1,18 @@
 :root {
-  --dark-bg: #1a1a1d;
-  --dark-text: #f5f5f5;
-  --rh-green: #3ce4ad;
+  --dark-bg: #333333;
+  --dark-text: #F5F8FA;
+  --rh-green: #e43137;
+  --primary: #e43137;
 }
 
 body {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   background-color: var(--dark-bg);
   color: var(--dark-text);
+}
+
+.ct {
+  width: 100%;
 }
 
 .content-container {
@@ -35,13 +40,7 @@ a:hover {
 
 a.active {
   opacity: 1;
-  color: var(--rh-green) !important;
-}
-
-h1.page-title {
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 2px;
+  color: var(--primary);
 }
 
 h2.page-subtitle {
@@ -74,41 +73,6 @@ h2.page-subtitle {
   align-items: center;
   justify-content: center;
   padding-top: 10vh;
-}
-
-.sb__button {
-  font-weight: 700;
-  text-transform: uppercase;
-  width: 15rem;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.sb__button span{
-  transition: all 1.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -webkit-transition: all 1.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  width: 0px;
-}
-
-.sb__button:hover span{
-  flex: 1;
-}
-
-@media only screen and (max-width: 800px) {
-  .sb__button {
-    width: 100%;
-    margin-bottom: 3rem;
-  }
-}
-
-.sb__button:hover {
-  -webkit-transform: scale(1.05, 1.05);
-  transform: scale(1.05, 1.05);
 }
 
 .qr-container {
@@ -198,4 +162,3 @@ h2.page-subtitle {
 code {
   color: var(--rh-green);
 }
-

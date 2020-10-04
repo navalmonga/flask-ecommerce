@@ -1,8 +1,11 @@
 {% extends "base.html" %}
-{% block nav_about %}active underline{% endblock %}
+{% block nav_about %}active{% endblock %}
 {% block content %}
-    <div>
-      <h1 class="page-title">about</h1>
+    <div class="auth-header">
+      <a href={{ url_for('main.index' )}}>
+          <img src={{ url_for('static', filename='shpr.svg') }} alt="shpr logo"/>
+      </a>
+      <h1>about</h1>
     </div>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -11,11 +14,11 @@
       </ol>
     </nav>
     <div>
-        <h2 class="page-subtitle">Description:</h2>
-        <p><code>Secure, E-Commerce Flask Application</code></p>
-          This project demonstrates a web application with a backend database, secured forms, and a user management system. The users of your website should have a reason to make an account. For example, they might need to sign in to favorite an item, create a post, or purchase something.
+        <h2 class="page-subtitle"><code>Secure, Full Stack eCommmerce Flask Application</code></h2>
+        <p>
+          Lorem ipsum.
         </p>
-        <p><code>Technologies</code></p>
+        <p><code>Open-Source Technologies</code></p>
         <ul>
           <li>Login/Registration w/ 2FA (Flask-Login)</li>
           <li>CSP (Flask-Talisman)</li>

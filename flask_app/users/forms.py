@@ -28,7 +28,7 @@ class RegistrationForm(FlaskForm):
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
-    token = StringField('Token', validators=[DataRequired(), Length(min=6, max=6)])
+    token = StringField('2FA Token', validators=[DataRequired(), Length(min=6, max=6)])
     submit = SubmitField('Login')
 
     def validate_username(self, username):

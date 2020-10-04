@@ -12,22 +12,23 @@
     <link rel="manifest" href={{ url_for('static', filename='favicon_io/site.webmanifest') }}>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href={{ url_for('static', filename='custom.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/custom.css') }}>
+    <!-- <link rel="stylesheet" href="../static/custom.css"> -->
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,400,700&display=swap" rel="stylesheet"> 
     <!-- <script src="https://use.fontawesome.com/df56271fe5.js"></script> -->
     <link href={{ url_for('static', filename='faweb/css/all.css') }} rel="stylesheet"> <!--load all styles -->
     <script defer src={{ url_for('static', filename='faweb/js/all.js') }}></script>
     {% if title %}
-        <title>{{ title }} - soldby.io</title>
+        <title>{{ title }} - SHPR</title>
     {% else %}
-        <title>soldby.io</title>
+        <title>SHPR</title>
     {% endif %}
 </head>
 <body> 
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-inverse">
             <a class="navbar-brand" href={{ url_for('main.index' )}} style="margin-left:0.25rem">
-                <img src={{ url_for('static', filename='case-d.svg') }} width="36px" alt="soldby logo"/>
+                <img src={{ url_for('static', filename='shpr.svg') }} width="72px" alt="shpr logo"/>
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,10 +38,10 @@
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a href={{ url_for('main.index') }} class="nav-link {% block nav_home %}{% endblock %}">Home</a>
+                        <a href={{ url_for('main.index') }} class="nav-link {% block nav_home %}{% endblock %}">home</a>
                     </li>
                     <li class="nav-item">
-                        <a href={{ url_for('main.about') }} class="nav-link {% block nav_about %}{% endblock %}">About</a>
+                        <a href={{ url_for('main.about') }} class="nav-link {% block nav_about %}{% endblock %}">about</a>
                     </li>
                 </ul>
 
@@ -48,15 +49,15 @@
                 <ul class="nav navbar-nav ml-auto justify-content-end">
                     <li class="nav-item-not">
                         <form action={{ url_for('listings.create_listing') }}>
-                            <button type="submit" class="btn btn-light sb__button">Sell an item<span></span>&nbsp;&rarr;</button>
+                            <button type="submit" class="btn sb__button">Sell an item<span></span>&nbsp;&rarr;</button>
                         </form>
                     </li>
                     <li class="nav-item">
                         <a href={{ url_for('users.account' )}} class="nav-link {% block nav_account %}{% endblock %}">
                             {% if current_user.picture_url %}
-                            <img class="img-nav-avatar" src={{ current_user.picture_url }} alt="profile image" style="border-radius:0.75em;"/>
+                            <img class="img-nav-avatar" src={{ current_user.picture_url }} alt="profile image" style="border-radius:0.75em;" height="32px"/>
                             {% else %}
-                            <img class="img-nav-avatar" src={{ url_for('static', filename='default-user.svg') }} alt="default profile image" />
+                            <img class="img-nav-avatar" src={{ url_for('static', filename='default-user.svg') }} alt="default profile image" height="32px"/>
                             {% endif %}
                             {{ current_user.username }}
                         </a>

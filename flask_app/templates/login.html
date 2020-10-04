@@ -1,16 +1,16 @@
 {% extends "base.html" %}
-{% block nav_login %}active underline{% endblock %}
+{% block nav_login %}active{% endblock %}
 {% block content %}
-    <div>
-        <h1 class="page-title">login</h1>
+    <div class="auth-header">
+        <a href={{ url_for('main.index' )}}>
+            <img src={{ url_for('static', filename='shpr.svg') }} alt="shpr logo"/>
+        </a>
+        <h1>login</h1>
     </div>
     <div>
         If you <b>don't</b> have an account, then <a href={{ url_for('users.register') }}>register.</a>
     </div>
-    <div class="flex__wrapper-col-center">
-        <a href={{ url_for('main.index' )}}>
-            <img src={{ url_for('static', filename='case-d.svg') }} width="72px" alt="soldby logo"/>
-        </a>
+    <div>
         <form action="" method="post">
             {{ form.csrf_token }}
             <div>
@@ -43,8 +43,9 @@
 
             {% endif %}
             </div>
-            <div style="margin-top:1rem;">
-                {{ form.submit(class="form-control form-control-md sb__button") }}
+            <br/>
+            <div>
+                {{ form.submit(class="btn sb__button ct") }}
             </div>
         </form>
     </div>

@@ -28,3 +28,8 @@ htmlcov/
 .coverage
 .coverage.*
 *,cover
+
+share/
+pyvenv.cfg
+etc/
+site.db

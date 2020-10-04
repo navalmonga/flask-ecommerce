@@ -12,9 +12,9 @@
     </nav>
     <div class="flexcol-center">
         {% if current_user.picture_url %}
-            <img class="img-avatar" src={{ current_user.picture_url }} aria-label="profile image"/>
+            <img class="img-avatar" src={{ current_user.picture_url }} aria-label="profile image" height="64px"/>
         {% else %}
-            <img class="img-avatar" src={{ url_for('static', filename='default-user.svg') }} aria-label="default profile image"/>
+            <img class="img-avatar" src={{ url_for('static', filename='default-user.svg') }} aria-label="default profile image" height="64px"/>
         {% endif %}
         <h6>Email:<code> {{ current_user.email }}</code></h6>
         <h6>Username:<code> {{ current_user.username }}</code></h6>
@@ -45,7 +45,7 @@
                 {% endif %}
             </div>
             <div>
-                {{ form.submit(class="form-control form-control-lg sb__button") }}
+                {{ form.submit(class="form-control") }}
             </div>
         </form>
     </div>
@@ -69,7 +69,7 @@
             <div class="flexrow-spacebetween">
                 <p><code>Price: ${{ listing.price_in_pennies }}</code></p>
                 <form action={{ url_for('listings.manage_listing', listing_id=listing.id) }}>
-                    <button type="submit" class="btn btn-light sb__button" ><i class="fas fa-wrench"></i>&nbsp;Manage</button>
+                    <button type="submit" class="btn sb__button" ><i class="fas fa-wrench"></i>&nbsp;Manage</button>
                 </form>
             </div>
         </article>

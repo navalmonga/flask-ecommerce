@@ -1,13 +1,16 @@
 from flask import render_template, Blueprint, request, current_app, redirect, url_for
 from flask_login import current_user
 from flask_app.models import Listing, User
-
+import sass
+import os
 
 main = Blueprint('main', __name__)
+print(os.listdir(os.getcwd()))
 
 @main.route("/")
 @main.route("/listings")
 def index():
+  sass.compile(dirname=('{}/flask_app/static/sass'.format(os.getcwd()), '{}/flask_app/static/css'.format(os.getcwd())), output_style='compressed')
   if not current_user.is_authenticated:
     return redirect(url_for('main.welcome'))
   listings = Listing.query.all()

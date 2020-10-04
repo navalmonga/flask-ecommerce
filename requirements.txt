@@ -19,7 +19,6 @@ imageio==2.4.1
 ipython-genutils==0.2.0
 itsdangerous==1.1.0
 Jinja2==2.10.3
-llvmlite==0.26.0
 locket==0.2.0
 MarkupSafe==1.1.1
 mpmath==1.1.0
@@ -38,7 +37,6 @@ pytz==2019.3
 PyYAML==3.13
 qrcode==6.1
 retrying==1.3.3
-ruamel-yaml==0.15.46
 six==1.13.0
 snowballstemmer==1.2.1
 SQLAlchemy==1.3.12
@@ -49,3 +47,4 @@ terminado==0.8.1
 Werkzeug==0.16.0
 wrapt==1.10.11
 WTForms==2.2.1
+libsass
